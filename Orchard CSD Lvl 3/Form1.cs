@@ -57,5 +57,29 @@ namespace Orchard_CSD_Lvl_3
             this.Close();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 newform = new Form1();
+            this.Hide();
+            Help.ShowDialog(M);
+            this.Show();
+        }
     }
+
+  
+
+
+
+
+
+
+        //Form1 newform = new Form1();
+        //this.Hide();
+        //Help.ShowDialog();
+        //this.Show();
+    }
+
+ 
+       
 }

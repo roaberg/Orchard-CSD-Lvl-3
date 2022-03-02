@@ -43,11 +43,14 @@ namespace Orchard_CSD_Lvl_3
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -64,6 +67,8 @@ namespace Orchard_CSD_Lvl_3
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.numericUpDown2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Controls.Add(this.label2);
@@ -98,9 +103,9 @@ namespace Orchard_CSD_Lvl_3
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(463, 70);
+            this.numericUpDown1.Location = new System.Drawing.Point(249, 70);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(192, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(196, 20);
             this.numericUpDown1.TabIndex = 4;
             // 
             // label2
@@ -108,7 +113,7 @@ namespace Orchard_CSD_Lvl_3
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(459, 48);
+            this.label2.Location = new System.Drawing.Point(249, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 22);
             this.label2.TabIndex = 3;
@@ -118,7 +123,7 @@ namespace Orchard_CSD_Lvl_3
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(30, 70);
+            this.comboBox1.Location = new System.Drawing.Point(493, 70);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(168, 21);
             this.comboBox1.TabIndex = 2;
@@ -180,6 +185,7 @@ namespace Orchard_CSD_Lvl_3
             this.button3.TabIndex = 7;
             this.button3.Text = "Help";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -193,6 +199,24 @@ namespace Orchard_CSD_Lvl_3
             this.button4.Text = "Close";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(23, 70);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(182, 20);
+            this.numericUpDown2.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(489, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(178, 22);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Search Tree by Block";
             // 
             // Form1
             // 
@@ -217,6 +241,7 @@ namespace Orchard_CSD_Lvl_3
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,6 +260,8 @@ namespace Orchard_CSD_Lvl_3
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
     }
 }
 
