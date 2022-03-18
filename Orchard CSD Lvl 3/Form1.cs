@@ -60,13 +60,34 @@ namespace Orchard_CSD_Lvl_3
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1 newform = new Form1();
+            
             this.Hide();
-            Help.ShowDialog(M);
-            this.Show();
+            Help newform = new Help();
+            newform.ShowDialog();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblquote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
-
+    
   
 
 
@@ -78,7 +99,7 @@ namespace Orchard_CSD_Lvl_3
         //this.Hide();
         //Help.ShowDialog();
         //this.Show();
-    }
+    
 
  
        
