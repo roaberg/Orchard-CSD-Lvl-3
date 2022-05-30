@@ -32,13 +32,13 @@ namespace Orchard_CSD_Lvl_3
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblquote = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddTree = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblquote = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -67,6 +67,18 @@ namespace Orchard_CSD_Lvl_3
             this.panel1.Size = new System.Drawing.Size(680, 94);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblquote
+            // 
+            this.lblquote.AutoSize = true;
+            this.lblquote.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblquote.ForeColor = System.Drawing.Color.White;
+            this.lblquote.Location = new System.Drawing.Point(181, 51);
+            this.lblquote.Name = "lblquote";
+            this.lblquote.Size = new System.Drawing.Size(294, 26);
+            this.lblquote.TabIndex = 6;
+            this.lblquote.Text = "Every Apple... Our Best Apple";
+            this.lblquote.Click += new System.EventHandler(this.lblquote_Click);
             // 
             // panel2
             // 
@@ -100,6 +112,7 @@ namespace Orchard_CSD_Lvl_3
             this.btnAddTree.TabIndex = 4;
             this.btnAddTree.Text = "Add Tree";
             this.btnAddTree.UseVisualStyleBackColor = false;
+            this.btnAddTree.Click += new System.EventHandler(this.btnAddTree_Click);
             // 
             // pictureBox2
             // 
@@ -136,18 +149,6 @@ namespace Orchard_CSD_Lvl_3
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // lblquote
-            // 
-            this.lblquote.AutoSize = true;
-            this.lblquote.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblquote.ForeColor = System.Drawing.Color.White;
-            this.lblquote.Location = new System.Drawing.Point(181, 51);
-            this.lblquote.Name = "lblquote";
-            this.lblquote.Size = new System.Drawing.Size(294, 26);
-            this.lblquote.TabIndex = 6;
-            this.lblquote.Text = "Every Apple... Our Best Apple";
-            this.lblquote.Click += new System.EventHandler(this.lblquote_Click);
             // 
             // btnSearch
             // 

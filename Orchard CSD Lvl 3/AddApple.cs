@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Orchard_CSD_Lvl_3
 {
-    public partial class SearchTree : Form
+    public partial class AddApple : Form
     {
-        public SearchTree()
+        public AddApple()
         {
             InitializeComponent();
         }
@@ -22,11 +22,9 @@ namespace Orchard_CSD_Lvl_3
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void nudRow_ValueChanged(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 newform = new Form1();
-            newform.ShowDialog();
+
         }
     }
 }

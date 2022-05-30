@@ -84,7 +84,16 @@ namespace Orchard_CSD_Lvl_3
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            SearchTree newform = new SearchTree();
+            newform.ShowDialog();
+        }
 
+        private void btnAddTree_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddTree newform = new AddTree();
+            newform.ShowDialog();
         }
     }
     
