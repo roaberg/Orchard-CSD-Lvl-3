@@ -92,8 +92,34 @@ namespace Orchard_CSD_Lvl_3
         private void btnAddTree_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddTree newform = new AddTree();
+            AddApple newform = new AddApple();
             newform.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddApple newform = new AddApple();
+            newform.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SearchTree newform = new SearchTree();
+            newform.ShowDialog();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Help newform = new Help();
+            newform.ShowDialog();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     

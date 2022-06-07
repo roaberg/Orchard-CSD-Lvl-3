@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -66,12 +67,6 @@
     </Compile>
     <Compile Include="AddApple.Designer.cs">
       <DependentUpon>AddApple.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddTree.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddTree.Designer.cs">
-      <DependentUpon>AddTree.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -109,9 +104,6 @@
     </Compile>
     <EmbeddedResource Include="AddApple.resx">
       <DependentUpon>AddApple.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddTree.resx">
-      <DependentUpon>AddTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

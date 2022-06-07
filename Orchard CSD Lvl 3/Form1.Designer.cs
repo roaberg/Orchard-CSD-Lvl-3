@@ -35,15 +35,17 @@ namespace Orchard_CSD_Lvl_3
             this.lblquote = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAddTree = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnHelp = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -101,19 +103,6 @@ namespace Orchard_CSD_Lvl_3
             this.label3.TabIndex = 0;
             this.label3.Text = "Welcome to Mr Apple, Counting log menu.";
             // 
-            // btnAddTree
-            // 
-            this.btnAddTree.BackColor = System.Drawing.Color.Red;
-            this.btnAddTree.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTree.ForeColor = System.Drawing.Color.White;
-            this.btnAddTree.Location = new System.Drawing.Point(30, 173);
-            this.btnAddTree.Name = "btnAddTree";
-            this.btnAddTree.Size = new System.Drawing.Size(286, 108);
-            this.btnAddTree.TabIndex = 4;
-            this.btnAddTree.Text = "Add Tree";
-            this.btnAddTree.UseVisualStyleBackColor = false;
-            this.btnAddTree.Click += new System.EventHandler(this.btnAddTree_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -124,44 +113,65 @@ namespace Orchard_CSD_Lvl_3
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // btnHelp
+            // panel3
             // 
-            this.btnHelp.BackColor = System.Drawing.Color.Red;
-            this.btnHelp.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelp.ForeColor = System.Drawing.Color.White;
-            this.btnHelp.Location = new System.Drawing.Point(556, 303);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(162, 57);
-            this.btnHelp.TabIndex = 7;
-            this.btnHelp.Text = "Help";
-            this.btnHelp.UseVisualStyleBackColor = false;
-            this.btnHelp.Click += new System.EventHandler(this.button3_Click);
+            this.panel3.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Location = new System.Drawing.Point(118, 131);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(578, 277);
+            this.panel3.TabIndex = 9;
             // 
-            // btnClose
+            // button1
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(88, 303);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(162, 57);
-            this.btnClose.TabIndex = 8;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.button4_Click);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(47, 49);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(207, 99);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Add Tree";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnSearch
+            // button2
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.Red;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(487, 173);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(286, 108);
-            this.btnSearch.TabIndex = 9;
-            this.btnSearch.Text = "Search Tree";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(74, 198);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 41);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Help";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(322, 49);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(207, 99);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Search Tree";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Red;
+            this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(351, 198);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(154, 41);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Exit";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // Form1
             // 
@@ -169,13 +179,11 @@ namespace Orchard_CSD_Lvl_3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(798, 450);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnHelp);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnAddTree);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -185,6 +193,7 @@ namespace Orchard_CSD_Lvl_3
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -194,12 +203,13 @@ namespace Orchard_CSD_Lvl_3
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnAddTree;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblquote;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

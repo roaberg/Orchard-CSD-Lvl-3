@@ -28,5 +28,18 @@ namespace Orchard_CSD_Lvl_3
             Form1 newform = new Form1();
             newform.ShowDialog();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 newform = new Form1();
+            newform.ShowDialog();
+
+        }
     }
 }
