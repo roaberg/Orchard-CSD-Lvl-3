@@ -46,22 +46,35 @@ namespace Orchard_CSD_Lvl_3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.ParseExact(dtpDatePlanted.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-            
-            string datePlanted = dt.ToString("yyyy/MM/dd");
+          
+
+
+
+
+            //DateTime dt = DateTime.ParseExact(dtpDatePlanted.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+            //string datePlanted = dt.ToString("yyyy/MM/dd");
             //INSERT INTO TblTree(TreeNum, TreeRow, TreeBlock, DatePlanted)VALUES(1, 1, 1, '2018/12/17')
-            string query = "INSERT INTO TblTree VALUES ('@TreeNum, @TreeRow,'" + this.cbxblock.Text + "','"+datePlanted+"')";
+            string query2 = "INSERT INTO TblTree(TreeNum, TreeRow, TreeBlock,DatePlanted) VALUES (@TreeNum, @TreeRow,'" + this.cbxblock.Text + "', '"+dtpDatePlanted.Value.ToString("dd-MM-yyyy", DateTimeFormatInfo.InvariantInfo) +"')";
             using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlCommand command = new SqlCommand(query2, connection))
             {
                 connection.Open();
                 
                 command.Parameters.AddWithValue("@TreeNum", nudNumber.Value);
                 command.Parameters.AddWithValue("@TreeRow", nudRow.Value);
-               
-                //MessageBox.Show(query);
-                command.ExecuteNonQuery();
+                //command.Parameters.AddWithValue("@DatePlanted", dtpDatePlanted.Text);
+                
+                //MessageBox.Show(query2);
+                int numRows = command.ExecuteNonQuery();
                 connection.Close();
+
+                //MessageBox.Show($"Number of rows: {numRows}");
+
+                if (numRows != 0 )
+                {
+                    MessageBox.Show("Tree successfully added");
+                }
             }
 
         }

@@ -1,2 +1,1 @@
-﻿INSERT INTO TblTree (TreeNum,TreeRow,TreeBlock,DatePlanted)
-VALUES (1, 1, 1, '2018/12/17')
+﻿INSERT INTO TblTree (TreeNum,TreeRow,TreeBlock,DatePlanted) VALUES (1, 3, f, '12/11/2017')

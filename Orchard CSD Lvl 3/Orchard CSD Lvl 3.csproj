@@ -160,11 +160,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MrApple.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="MrApple.mdf" />
     <Content Include="MrApple_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MrApple.mdf</DependentUpon>
     </Content>
   </ItemGroup>
