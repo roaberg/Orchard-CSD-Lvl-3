@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Orchard_CSD_Lvl_3
 {
-    class Tree
+    public class Tree
     {
+        private int treeID;
         private int treeNo;
         private int treeRow;
         private char treeBlock;
@@ -15,28 +17,41 @@ namespace Orchard_CSD_Lvl_3
 
         private List<Harvest> harvests = new List<Harvest>();
 
-        public Tree(int tNo, int tRow, char tBlock, DateTime datePlanted)
+        public Tree(int tID, int tNo, int tRow, char tBlock, DateTime datePlanted)
         {
+            treeID = tID;
             treeNo = tNo;
             treeRow = tRow;
             treeBlock = tBlock;
             this.datePlanted = datePlanted;
+
+            //MessageBox.Show($"{treeID} {treeNo} {treeRow} {treeBlock} {datePlanted.ToString()}");
         }
 
+        public int GetTreeID()
+        {
+            return treeID;
+        }
         public int GetTreeNo()
         {
-            return 0;
+            return treeNo;
         }
 
         public int GetTreeRow()
         {
-            return 0;
+            return treeRow;
         }
 
         public char GetTreeBlock()
         {
-            return 'a';
+            return treeBlock;
         }
+
+        public string GetDatePlanted()
+        {
+            return ""+ datePlanted.Year;
+        }
+
 
         public decimal HarvestAvg()
         {

@@ -34,8 +34,9 @@ namespace Orchard_CSD_Lvl_3
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnTreeSearch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnAppleEnter = new System.Windows.Forms.Button();
+            this.btnAppleUpdate = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,8 +86,9 @@ namespace Orchard_CSD_Lvl_3
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel3.Controls.Add(this.btnTreeSearch);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.btnAppleEnter);
+            this.panel3.Controls.Add(this.btnAppleUpdate);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label2);
@@ -98,13 +100,26 @@ namespace Orchard_CSD_Lvl_3
             this.panel3.Size = new System.Drawing.Size(507, 271);
             this.panel3.TabIndex = 13;
             // 
+            // btnTreeSearch
+            // 
+            this.btnTreeSearch.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnTreeSearch.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTreeSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnTreeSearch.Location = new System.Drawing.Point(177, 225);
+            this.btnTreeSearch.Name = "btnTreeSearch";
+            this.btnTreeSearch.Size = new System.Drawing.Size(153, 33);
+            this.btnTreeSearch.TabIndex = 14;
+            this.btnTreeSearch.Text = "Search";
+            this.btnTreeSearch.UseVisualStyleBackColor = false;
+            this.btnTreeSearch.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(328, 225);
+            this.button1.Location = new System.Drawing.Point(351, 225);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 33);
             this.button1.TabIndex = 13;
@@ -112,16 +127,17 @@ namespace Orchard_CSD_Lvl_3
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnAppleEnter
+            // btnAppleUpdate
             // 
-            this.btnAppleEnter.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppleEnter.ForeColor = System.Drawing.Color.Black;
-            this.btnAppleEnter.Location = new System.Drawing.Point(23, 225);
-            this.btnAppleEnter.Name = "btnAppleEnter";
-            this.btnAppleEnter.Size = new System.Drawing.Size(153, 33);
-            this.btnAppleEnter.TabIndex = 12;
-            this.btnAppleEnter.Text = "Enter";
-            this.btnAppleEnter.UseVisualStyleBackColor = true;
+            this.btnAppleUpdate.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAppleUpdate.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppleUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnAppleUpdate.Location = new System.Drawing.Point(3, 225);
+            this.btnAppleUpdate.Name = "btnAppleUpdate";
+            this.btnAppleUpdate.Size = new System.Drawing.Size(153, 33);
+            this.btnAppleUpdate.TabIndex = 12;
+            this.btnAppleUpdate.Text = "Update";
+            this.btnAppleUpdate.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -203,12 +219,13 @@ namespace Orchard_CSD_Lvl_3
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnAppleEnter;
+        private System.Windows.Forms.Button btnAppleUpdate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nudNumber;
         private System.Windows.Forms.NumericUpDown nudRow;
         private System.Windows.Forms.ComboBox cbxblock;
+        private System.Windows.Forms.Button btnTreeSearch;
     }
 }

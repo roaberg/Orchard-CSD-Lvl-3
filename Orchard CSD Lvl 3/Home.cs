@@ -10,10 +10,12 @@ using System.Windows.Forms;
 
 namespace Orchard_CSD_Lvl_3
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        private OrchardManager om;
+        public Home(OrchardManager om)
         {
+            this.om = om;
             InitializeComponent();
         }
 
@@ -106,7 +108,7 @@ namespace Orchard_CSD_Lvl_3
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SearchTree newform = new SearchTree();
+            AddHarvest newform = new AddHarvest(om);
             newform.ShowDialog();
         }
 
@@ -119,7 +121,7 @@ namespace Orchard_CSD_Lvl_3
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
     

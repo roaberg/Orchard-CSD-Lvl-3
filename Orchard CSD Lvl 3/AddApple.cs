@@ -14,7 +14,10 @@ using System.Windows.Forms;
 namespace Orchard_CSD_Lvl_3
 {
     public partial class AddApple : Form
+        
     {
+        private OrchardManager om;
+
         SqlConnection connection;
         string connectionString;
 
@@ -82,7 +85,7 @@ namespace Orchard_CSD_Lvl_3
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 newform = new Form1();
+            Home newform = new Home(om);
             newform.ShowDialog();
 
         }

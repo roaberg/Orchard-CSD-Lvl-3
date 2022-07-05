@@ -12,6 +12,7 @@ namespace Orchard_CSD_Lvl_3
 {
     public partial class SearchTree : Form
     {
+        private OrchardManager om;
         public SearchTree()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace Orchard_CSD_Lvl_3
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 newform = new Form1();
+            Home newform = new Home(om);
             newform.ShowDialog();
         }
 
@@ -37,8 +38,13 @@ namespace Orchard_CSD_Lvl_3
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 newform = new Form1();
+            Home newform = new Home(om);
             newform.ShowDialog();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
     }

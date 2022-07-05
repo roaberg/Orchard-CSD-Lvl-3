@@ -12,6 +12,7 @@ namespace Orchard_CSD_Lvl_3
 {
     public partial class Help : Form
     {
+        private OrchardManager om;
         public Help()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace Orchard_CSD_Lvl_3
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 newform = new Form1();
+            Home newform = new Home(om);
             newform.ShowDialog();
             
         }

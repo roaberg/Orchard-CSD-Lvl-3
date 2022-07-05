@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Orchard_CSD_Lvl_3
 {
-    class Harvest
+    public class Harvest
     {
         //properties
         private DateTime harvestDate;
