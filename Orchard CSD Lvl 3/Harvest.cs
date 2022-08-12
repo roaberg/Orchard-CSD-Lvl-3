@@ -13,12 +13,22 @@ namespace Orchard_CSD_Lvl_3
         private int thinningCountBefore;
         private int thinningCountAfter;
         private DateTime thinningDate;
-        private int finalHarvestCount;
+
 
         public Harvest()
         {
 
         }
+
+        public Harvest(int tCountBefore, int tCountAfter, DateTime thinningdate)
+        {
+            thinningCountBefore = tCountBefore;
+            thinningCountAfter = tCountAfter;
+            this.thinningDate = thinningdate;
+
+            //MessageBox.Show($"{treeID} {treeNo} {treeRow} {treeBlock} {datePlanted.ToString()}");
+        }
+
 
         public int CountDifference()
         {
@@ -30,31 +40,60 @@ namespace Orchard_CSD_Lvl_3
             this.harvestDate = harvestDate;
         }
 
-        public void SetThinningCountBefore(int thinningCountBefore)
+        public void SetThinningCountBefore() //int thinningCountBefore)
         {
             this.thinningCountBefore = thinningCountBefore;
         }
-        public void SetThinningCountAfter(int thinningCountAfter)
+        public void SetThinningCountAfter()//int thinningCountAfter
         {
             this.thinningCountAfter = thinningCountAfter;
         }
 
-        public void SetThinningDate(DateTime thinningDate)
+        public string SetThinningDate(DateTime thinningdate)
         {
-            this.thinningDate = thinningDate;
+            return "" + thinningdate.Year;
 
 
         }
-
-        public void SetFinalHarvestCount(int finalHarvestCount)
+        public int GetThinningBeforeCount()
         {
-            this.finalHarvestCount = finalHarvestCount;
+            return thinningCountBefore;
         }
+
+        public int GetThinningAfterCount()
+        {
+            return thinningCountAfter;
+        }
+        
+        public DateTime GetThinningDate()
+        {
+            return thinningDate;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public void SetFinalHarvestCount(int finalHarvestCount)
+        //{
+        //    this.finalHarvestCount = finalHarvestCount;
+        //}
     
-        public int GetFinalHarvestCount()
-        {
-            return finalHarvestCount;
-        }
+        //public int GetFinalHarvestCount()
+        //{
+        //    return finalHarvestCount;
+        //}
     }   
 
 }

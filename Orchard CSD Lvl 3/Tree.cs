@@ -52,18 +52,27 @@ namespace Orchard_CSD_Lvl_3
             return ""+ datePlanted.Year;
         }
 
-
-        public decimal HarvestAvg()
+        public List<Harvest> GetHarvests()
         {
-            double sumHarvestCount = 0;
-            foreach (Harvest harvest in harvests)
-            {
-                sumHarvestCount += harvest.GetFinalHarvestCount();
-            }
-
-            return Convert.ToDecimal(Math.Round(sumHarvestCount / harvests.Count, 2));
-
+            return harvests;
         }
+        public void AddHarvest(int beforethinning, int afterthinning, DateTime thinningdate)
+        {
+            harvests.Add(new Harvest(beforethinning, afterthinning, thinningdate));
+        }
+
+
+        //public decimal HarvestAvg()
+        //{
+        //    double sumHarvestCount = 0;
+        //    foreach (Harvest harvest in harvests)
+        //    {
+        //        sumHarvestCount += harvest.GetFinalHarvestCount();
+        //    }
+
+        //    return Convert.ToDecimal(Math.Round(sumHarvestCount / harvests.Count, 2));
+
+        //}
 
 
 

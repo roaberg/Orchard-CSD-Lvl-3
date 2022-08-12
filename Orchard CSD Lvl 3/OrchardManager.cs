@@ -42,6 +42,36 @@ namespace Orchard_CSD_Lvl_3
                     myConnection.Close();
                 }
             }
+            int treeindex = 0;
+            foreach(Tree tree in trees)
+            {
+                int foundID = tree.GetTreeID();
+                string query = $"Select * from TblHarvets where TreeId = {foundID}";
+
+                using (SqlConnection myConnection = new SqlConnection(constring))
+                {
+                    string queryString = query;
+                    SqlCommand cmd = new SqlCommand(queryString, myConnection);
+
+                    myConnection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            //MessageBox.Show(reader["DatePlanted"].ToString());
+
+                            trees[treeindex].AddHarvest(Convert.ToInt32(reader["BeforeThinCount"].ToString()), Convert.ToInt32(reader["AfterThinCount"].ToString()), Convert.ToDateTime(reader["ThinDate"].ToString()));
+
+                        }
+
+                        myConnection.Close();
+                    }
+                }
+
+                treeindex++;
+            }
+
+
         }
 
         public void SetTrees(List<Tree> trees)
@@ -54,7 +84,38 @@ namespace Orchard_CSD_Lvl_3
         {
             return trees;
         }
+
+
+
+        //public void SetHarvests(List<Harvest> harvests)
+        //{
+        //    this.harvests = harvests;
+
+        //}
+
+        public Tree GetTree(int treeId)
+        {
+
+            Tree tree = new Tree(-1, -1, -1, '6', new DateTime());
+
+            foreach (Tree foundtree in trees)
+            {
+                if (treeId == tree.GetTreeID())
+                {
+                    tree = foundtree;
+                }
+            }
+
+            return tree;
+        }
+
+
     }
+
+
+
+
+
 
 
 }
