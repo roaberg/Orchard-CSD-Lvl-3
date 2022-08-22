@@ -148,17 +148,17 @@ namespace Orchard_CSD_Lvl_3
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            //if (Convert.ToInt32(nudSearchTreeNum.Text) != 0)
-            //{
+            if (Convert.ToInt32(nudSearchTreeNum.Text) >= 0)
+            {
 
-            //    btnSearchTree.Enabled = false;
-            //}
+                btnSearchTree.Enabled = true;
+            }
 
-            //else
-            //{
+            else
+            {
 
-            //    btnSearchTree.Enabled = true;
-            //}
+                btnSearchTree.Enabled = false;
+            }
         }
 
         private void rbnThinning_CheckedChanged(object sender, EventArgs e)
@@ -220,17 +220,17 @@ namespace Orchard_CSD_Lvl_3
 
         private void nudSearchTreeRow_ValueChanged(object sender, EventArgs e)
         {
-            //if (Convert.ToInt32 (nudSearchTreeRow.Value) != 0)
-            //{
+            if (Convert.ToInt32(nudSearchTreeRow.Value) != 0)
+            {
 
-            //    btnSearchTree.Enabled = false;
-            //}
+                btnSearchTree.Enabled = true;
+            }
 
-            //else
-            //{
+            else
+            {
 
-            //    btnSearchTree.Enabled = true;
-            //}
+                btnSearchTree.Enabled = false;
+            }
 
         }
 
@@ -287,29 +287,34 @@ namespace Orchard_CSD_Lvl_3
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            dv.RowFilter = "";
             //MessageBox.Show(nudSearchTreeRow.Value+"");
             //search listviewbox via Tree Block txtbox
             if (!txbSearchBlock.Equals("") && txbSearchBlock.Text.Length == 1)
-                
             {
-                
-                dv.RowFilter = string.Format("Block Like '{0}'", txbSearchBlock.Text); // Code from https://www.youtube.com/watch?v=cycavkXug5U
+                dv.RowFilter += string.Format("(Block Like '{0}')", txbSearchBlock.Text); // Code from https://www.youtube.com/watch?v=cycavkXug5U
                 
             }
             //PopulateListView(dv);
 
             if (nudSearchTreeRow.Value != 0)
             {
+                if (dv.RowFilter == "")
+                    dv.RowFilter += string.Format("(Row Like '{0}')", nudSearchTreeRow.Text);
+                else
+                    dv.RowFilter += string.Format("AND (Row Like '{0}')", nudSearchTreeRow.Text);
                 //MessageBox.Show("blah");
-                dv.RowFilter = string.Format("Row Like '{0}'", nudSearchTreeRow.Text);
+
 
             }
             //PopulateListView(dv);
 
             if (nudSearchTreeNum.Value != 0)
             {
-                dv.RowFilter = string.Format("Number Like '{0}'", nudSearchTreeNum.Text);
+                if (dv.RowFilter == "")
+                    dv.RowFilter += string.Format("(Number Like '{0}')", nudSearchTreeNum.Text);
+                else
+                    dv.RowFilter += string.Format("AND (Number Like '{0}')", nudSearchTreeNum.Text);
 
             }
             PopulateListView(dv);

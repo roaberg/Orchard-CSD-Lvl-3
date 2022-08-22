@@ -120,6 +120,7 @@ namespace Orchard_CSD_Lvl_3
             // 
             // btnSearchTree
             // 
+            this.btnSearchTree.Enabled = false;
             this.btnSearchTree.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchTree.ForeColor = System.Drawing.Color.Black;
             this.btnSearchTree.Location = new System.Drawing.Point(547, 56);

@@ -46,7 +46,7 @@ namespace Orchard_CSD_Lvl_3
             foreach(Tree tree in trees)
             {
                 int foundID = tree.GetTreeID();
-                string query = $"Select * from TblHarvets where TreeId = {foundID}";
+                string query = $"Select * from TblHarvests where TreeId = {foundID}";
 
                 using (SqlConnection myConnection = new SqlConnection(constring))
                 {
