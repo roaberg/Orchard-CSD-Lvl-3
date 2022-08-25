@@ -32,7 +32,6 @@ namespace Orchard_CSD_Lvl_3
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddApple));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nudRow = new System.Windows.Forms.NumericUpDown();
-            this.cbxblock = new System.Windows.Forms.ComboBox();
             this.nudNumber = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,6 +45,7 @@ namespace Orchard_CSD_Lvl_3
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txbTreeBlock = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
@@ -72,14 +72,6 @@ namespace Orchard_CSD_Lvl_3
             this.nudRow.Size = new System.Drawing.Size(316, 20);
             this.nudRow.TabIndex = 6;
             this.nudRow.ValueChanged += new System.EventHandler(this.nudRow_ValueChanged);
-            // 
-            // cbxblock
-            // 
-            this.cbxblock.FormattingEnabled = true;
-            this.cbxblock.Location = new System.Drawing.Point(182, 120);
-            this.cbxblock.Name = "cbxblock";
-            this.cbxblock.Size = new System.Drawing.Size(316, 21);
-            this.cbxblock.TabIndex = 2;
             // 
             // nudNumber
             // 
@@ -132,6 +124,7 @@ namespace Orchard_CSD_Lvl_3
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel3.Controls.Add(this.txbTreeBlock);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.btnAppleEnter);
             this.panel3.Controls.Add(this.dtpDatePlanted);
@@ -141,7 +134,6 @@ namespace Orchard_CSD_Lvl_3
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.nudNumber);
             this.panel3.Controls.Add(this.nudRow);
-            this.panel3.Controls.Add(this.cbxblock);
             this.panel3.Location = new System.Drawing.Point(150, 109);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(507, 271);
@@ -222,6 +214,13 @@ namespace Orchard_CSD_Lvl_3
             this.label2.Text = "Enter Tree Number";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // txbTreeBlock
+            // 
+            this.txbTreeBlock.Location = new System.Drawing.Point(182, 124);
+            this.txbTreeBlock.Name = "txbTreeBlock";
+            this.txbTreeBlock.Size = new System.Drawing.Size(316, 20);
+            this.txbTreeBlock.TabIndex = 14;
+            // 
             // AddApple
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +249,6 @@ namespace Orchard_CSD_Lvl_3
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown nudRow;
-        private System.Windows.Forms.ComboBox cbxblock;
         private System.Windows.Forms.NumericUpDown nudNumber;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -264,5 +262,6 @@ namespace Orchard_CSD_Lvl_3
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAppleEnter;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txbTreeBlock;
     }
 }
