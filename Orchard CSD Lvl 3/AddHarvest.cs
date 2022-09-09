@@ -54,7 +54,7 @@ namespace Orchard_CSD_Lvl_3
             dt.Columns.Add("Number");
             dt.Columns.Add("DatePlanted");
 
-            //Getting DataList from Rider Manager
+            //Getting DataList from Orchard Manager
             List<Tree> trees = this.om.GetTrees();
 
             foreach (var tree in trees)   //Code from Microsoft Teams
@@ -148,7 +148,7 @@ namespace Orchard_CSD_Lvl_3
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(nudSearchTreeNum.Text) >= 0)
+            if (Convert.ToInt32(nudSearchTreeNum.Value) != 0)
             {
 
                 btnSearchTree.Enabled = true;
@@ -163,34 +163,13 @@ namespace Orchard_CSD_Lvl_3
 
         private void rbnThinning_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbnThinning.Checked == true)
-            {
-                dtpThinningDate.Visible = true;
-                lblBeforeThinning.Visible = true;
-                lblAfterThinning.Visible = true;
-                nudBeforeThinning.Visible = true;
-                nudAfterThinning.Visible = true;
-                lblThinningDate.Visible = true;
-            }
-            else
-            {
-                dtpThinningDate.Visible = false;
-                lblBeforeThinning.Visible = false;
-                lblThinningDate.Visible = false;
-                lblAfterThinning.Visible = false;
-                nudBeforeThinning.Visible = false;
-                nudAfterThinning.Visible = false;
-            }
+            
 
-            if (rbnThinning.Checked == true)
-            {
-                
-            }
+           
 
 
 
-
-            }
+        }
 
         private void dtpHarvestDate_ValueChanged(object sender, EventArgs e)
         {
@@ -199,20 +178,103 @@ namespace Orchard_CSD_Lvl_3
 
         private void rbnHarvest_CheckedChanged(object sender, EventArgs e)
         {
+
+            lvwHarvest.Columns.Clear();
+
             if (rbnHarvest.Checked == true)
             {
+               
+                //Listview Properties
+                lvwHarvest.View = View.Details;
+                lvwHarvest.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+                //Add Columns
+                lvwHarvest.Columns.Add("Harvest Date", 67);
+                lvwHarvest.Columns.Add("Harvest Count", 67);
+
+
+
+
+                //Initialise Datatable and add Columns
+                dt2 = new DataTable();
+                dt2.Columns.Add("Harvest Date");
+                dt2.Columns.Add("Harvest Count");
+
+
+
+                //Getting DataList from Rider Manager
+                List<Harvest> harvests = this.om.GetTree(treeID).GetHarvests();
+
+                foreach (var harvest in harvests)   //Code from Microsoft Teams
+                {
+
+                    dt2.Rows.Add(harvest.GetHarvestDate().Year + "", harvest.GetHarvestCount());
+
+                }
+                //Fill Datatable
+                dv2 = new DataView(dt2);
+                PopulateListView(dv2);
+
                 dtpHarvestDate.Visible = true;
                 lblAppleCount.Visible = true;
                 nudApplesCount.Visible = true;
                 lblHarvestDate.Visible = true;
 
+                dtpThinningDate.Visible = false;
+                lblBeforeThinning.Visible = false;
+                lblThinningDate.Visible = false;
+                lblAfterThinning.Visible = false;
+                nudBeforeThinning.Visible = false;
+                nudAfterThinning.Visible = false;
+
             }
             else
             {
+                //Listview Properties
+                lvwHarvest.View = View.Details;
+                lvwHarvest.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+                //Add Columns
+                lvwHarvest.Columns.Add("Thinning Count Before", 67);
+                lvwHarvest.Columns.Add("Thinning Count After", 67);
+                lvwHarvest.Columns.Add("Count Difference", 67);
+                lvwHarvest.Columns.Add("Thinning Date", 67);
+
+
+
+                //Initialise Datatable and add Columns
+                dt2 = new DataTable();
+                dt2.Columns.Add("Thinning Count Before");
+                dt2.Columns.Add("Thinning Count After");
+                dt2.Columns.Add("Count Difference");
+                dt2.Columns.Add("Thinning Date");
+
+
+                //Getting DataList from Rider Manager
+                List<Harvest> harvests = this.om.GetTree(treeID).GetHarvests();
+
+                foreach (var harvest in harvests)   //Code from Microsoft Teams
+                {
+
+                    dt2.Rows.Add(harvest.GetThinningBeforeCount(), harvest.GetThinningAfterCount(), harvest.CountDifference(), harvest.GetThinningDate().Year + "");
+
+                }
+                //Fill Datatable
+                dv2 = new DataView(dt2);
+                PopulateListView(dv2);
+
+
                 dtpHarvestDate.Visible = false;
                 lblAppleCount.Visible = false;
                 nudApplesCount.Visible = false;
                 lblHarvestDate.Visible = false;
+
+                dtpThinningDate.Visible = true;
+                lblBeforeThinning.Visible = true;
+                lblAfterThinning.Visible = true;
+                nudBeforeThinning.Visible = true;
+                nudAfterThinning.Visible = true;
+                lblThinningDate.Visible = true;
             }
 
 
@@ -224,6 +286,10 @@ namespace Orchard_CSD_Lvl_3
             {
 
                 btnSearchTree.Enabled = true;
+
+
+
+
             }
 
             else
@@ -250,39 +316,7 @@ namespace Orchard_CSD_Lvl_3
         
             MessageBox.Show("" + treeID);
 
-            //Listview Properties
-            lvwHarvest.View = View.Details;
-            lvwHarvest.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-
-            //Add Columns
-            lvwHarvest.Columns.Add("Thinning Count Before", 67);
-            lvwHarvest.Columns.Add("Thinning Count After", 67);
-            lvwHarvest.Columns.Add("Count Difference", 67);
-            lvwHarvest.Columns.Add("Thinning Date", 67);
-
-
-
-            //Initialise Datatable and add Columns
-            dt2 = new DataTable();
-            dt2.Columns.Add("Thinning Count Before");
-            dt2.Columns.Add("Thinning Count After");
-            dt2.Columns.Add("Count Difference");
-            dt2.Columns.Add("Thinning Date");
-
-
-            //Getting DataList from Rider Manager
-            List<Harvest> harvests = this.om.GetTree(treeID).GetHarvests();
-
-            foreach (var harvest in harvests)   //Code from Microsoft Teams
-            {
-
-                dt2.Rows.Add(harvest.GetThinningBeforeCount(), harvest.GetThinningAfterCount(), harvest.CountDifference(), harvest.GetThinningDate().Year+"");
-
-            }
-            //Fill Datatable
-            dv2 = new DataView(dt2);
-            PopulateListView(dv2);
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

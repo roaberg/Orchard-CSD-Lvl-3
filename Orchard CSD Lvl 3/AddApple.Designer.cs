@@ -38,6 +38,7 @@ namespace Orchard_CSD_Lvl_3
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txbTreeBlock = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAppleEnter = new System.Windows.Forms.Button();
             this.dtpDatePlanted = new System.Windows.Forms.DateTimePicker();
@@ -45,7 +46,6 @@ namespace Orchard_CSD_Lvl_3
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txbTreeBlock = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
@@ -67,6 +67,8 @@ namespace Orchard_CSD_Lvl_3
             // 
             // nudRow
             // 
+            this.nudRow.BackColor = System.Drawing.Color.Firebrick;
+            this.nudRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudRow.Location = new System.Drawing.Point(182, 78);
             this.nudRow.Name = "nudRow";
             this.nudRow.Size = new System.Drawing.Size(316, 20);
@@ -75,10 +77,13 @@ namespace Orchard_CSD_Lvl_3
             // 
             // nudNumber
             // 
+            this.nudNumber.BackColor = System.Drawing.Color.Firebrick;
+            this.nudNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudNumber.Location = new System.Drawing.Point(182, 34);
             this.nudNumber.Name = "nudNumber";
             this.nudNumber.Size = new System.Drawing.Size(316, 20);
             this.nudNumber.TabIndex = 4;
+            this.nudNumber.ValueChanged += new System.EventHandler(this.nudNumber_ValueChanged);
             // 
             // panel1
             // 
@@ -139,6 +144,16 @@ namespace Orchard_CSD_Lvl_3
             this.panel3.Size = new System.Drawing.Size(507, 271);
             this.panel3.TabIndex = 12;
             // 
+            // txbTreeBlock
+            // 
+            this.txbTreeBlock.BackColor = System.Drawing.Color.Firebrick;
+            this.txbTreeBlock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTreeBlock.Location = new System.Drawing.Point(182, 124);
+            this.txbTreeBlock.Name = "txbTreeBlock";
+            this.txbTreeBlock.Size = new System.Drawing.Size(316, 20);
+            this.txbTreeBlock.TabIndex = 14;
+            this.txbTreeBlock.TextChanged += new System.EventHandler(this.txbTreeBlock_TextChanged);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
@@ -154,6 +169,7 @@ namespace Orchard_CSD_Lvl_3
             // 
             // btnAppleEnter
             // 
+            this.btnAppleEnter.Enabled = false;
             this.btnAppleEnter.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppleEnter.ForeColor = System.Drawing.Color.Black;
             this.btnAppleEnter.Location = new System.Drawing.Point(21, 217);
@@ -213,13 +229,6 @@ namespace Orchard_CSD_Lvl_3
             this.label2.TabIndex = 7;
             this.label2.Text = "Enter Tree Number";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // txbTreeBlock
-            // 
-            this.txbTreeBlock.Location = new System.Drawing.Point(182, 124);
-            this.txbTreeBlock.Name = "txbTreeBlock";
-            this.txbTreeBlock.Size = new System.Drawing.Size(316, 20);
-            this.txbTreeBlock.TabIndex = 14;
             // 
             // AddApple
             // 

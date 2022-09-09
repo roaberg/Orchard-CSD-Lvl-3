@@ -60,7 +60,7 @@ namespace Orchard_CSD_Lvl_3
                         {
                             //MessageBox.Show(reader["DatePlanted"].ToString());
 
-                            trees[treeindex].AddHarvest(Convert.ToInt32(reader["BeforeThinCount"].ToString()), Convert.ToInt32(reader["AfterThinCount"].ToString()), Convert.ToDateTime(reader["ThinDate"].ToString()));
+                            trees[treeindex].AddHarvest(Convert.ToInt32(reader["BeforeThinCount"].ToString()), Convert.ToInt32(reader["AfterThinCount"].ToString()), Convert.ToDateTime(reader["ThinDate"].ToString()), Convert.ToDateTime(reader["HarvestDate"].ToString()), Convert.ToInt32(reader["HarvestCount"].ToString()));
 
                         }
 

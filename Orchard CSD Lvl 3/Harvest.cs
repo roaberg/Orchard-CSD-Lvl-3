@@ -10,6 +10,8 @@ namespace Orchard_CSD_Lvl_3
     {
         //properties
         private DateTime harvestDate;
+        private int harvestCount;
+
         private int thinningCountBefore;
         private int thinningCountAfter;
         private DateTime thinningDate;
@@ -20,8 +22,10 @@ namespace Orchard_CSD_Lvl_3
 
         }
 
-        public Harvest(int tCountBefore, int tCountAfter, DateTime thinningdate)
+        public Harvest(int tCountBefore, int tCountAfter, DateTime thinningdate, DateTime harvestDate, int harvestCount)
         {
+            this.harvestDate = harvestDate;
+            this.harvestCount = harvestCount;
             thinningCountBefore = tCountBefore;
             thinningCountAfter = tCountAfter;
             this.thinningDate = thinningdate;
@@ -71,8 +75,15 @@ namespace Orchard_CSD_Lvl_3
         }
 
 
+        public DateTime GetHarvestDate()
+        {
+            return harvestDate;
+        }
 
-
+        public int GetHarvestCount()
+        {
+            return harvestCount;
+        }
 
 
 

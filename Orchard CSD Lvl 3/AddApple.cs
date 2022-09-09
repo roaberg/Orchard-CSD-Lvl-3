@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace Orchard_CSD_Lvl_3
 {
@@ -37,13 +38,38 @@ namespace Orchard_CSD_Lvl_3
         
         }
 
+        private void txbTreeBlock_TextChanged(object sender, EventArgs e)
+        {
+            CheckInput();
+            Regex regex = new Regex("^[a-zA-Z]+$");
+            if (regex.IsMatch(txbTreeBlock.Text) && txbTreeBlock.Text.Length == 1)
+            {
+                txbTreeBlock.BackColor = Color.White;
 
+            }
+            else
+            {
+                MessageBox.Show("only use one alphabetical character");
+
+                txbTreeBlock.BackColor = Color.Red;
+
+
+               
+                //nudSearchTreeRow.Enabled = false;
+                //btnSearchTree.Enabled = false;
+
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            connectionString = ConfigurationManager.ConnectionStrings["Orchard_CSD_Lvl_3.Properties.Settings.MrAppleConnectionString"].ConnectionString;
+
+
+
+                connectionString = ConfigurationManager.ConnectionStrings["Orchard_CSD_Lvl_3.Properties.Settings.MrAppleConnectionString"].ConnectionString;
 
             con = new SqlConnection(connectionString);
             con.Open();
+
             cmd = new SqlCommand("INSERT INTO TblTree (TreeNum, TreeRow, TreeBlock, DatePlanted) VALUES (@TreeNum, @TreeRow, @TreeBlock, @DatePlanted)", con);
             cmd.Parameters.AddWithValue("@TreeNum", nudNumber.Value);
             cmd.Parameters.AddWithValue("@TreeRow", nudRow.Value);
@@ -52,7 +78,7 @@ namespace Orchard_CSD_Lvl_3
             cmd.ExecuteNonQuery();
             MessageBox.Show("Tree successfully added");
 
-
+            
 
 
 
@@ -83,6 +109,21 @@ namespace Orchard_CSD_Lvl_3
             //}
 
         }
+        private void nudNumber_ValueChanged(object sender, EventArgs e)
+        {
+            CheckInput();
+            if (Convert.ToInt32(nudNumber.Value) != 0)
+            {
+                nudNumber.BackColor = Color.White;
+            }
+            else
+            {
+                nudNumber.BackColor = Color.Red;
+            } 
+
+        }
+
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -94,22 +135,6 @@ namespace Orchard_CSD_Lvl_3
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -117,6 +142,15 @@ namespace Orchard_CSD_Lvl_3
 
         private void nudRow_ValueChanged(object sender, EventArgs e)
         {
+            CheckInput();
+            if (Convert.ToInt32(nudRow.Value) != 0)
+            {
+                nudRow.BackColor = Color.White;
+            }
+            else
+            {
+                nudRow.BackColor = Color.Red;
+            }
 
         }
 
@@ -130,6 +164,17 @@ namespace Orchard_CSD_Lvl_3
 
         }
 
-       
+        private void CheckInput()
+        {
+            Regex regex = new Regex("^[a-zA-Z]+$");
+            if (Convert.ToInt32(nudNumber.Value) != 0 && regex.IsMatch(txbTreeBlock.Text) && txbTreeBlock.Text.Length == 1 && Convert.ToInt32(nudRow.Value) != 0)
+            {
+                btnAppleEnter.Enabled = true;
+            }
+            else
+            {
+                btnAppleEnter.Enabled = false;
+            }
+        }
     }
 }
