@@ -13,8 +13,9 @@ namespace Orchard_CSD_Lvl_3
     public partial class Help : Form
     {
         private OrchardManager om;
-        public Help()
+        public Help(OrchardManager om)
         {
+            this.om = om;
             InitializeComponent();
         }
 

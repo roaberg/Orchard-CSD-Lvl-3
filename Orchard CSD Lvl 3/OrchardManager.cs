@@ -55,23 +55,55 @@ namespace Orchard_CSD_Lvl_3
 
                     myConnection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            //MessageBox.Show(reader["DatePlanted"].ToString());
 
-                            trees[treeindex].AddHarvest(Convert.ToInt32(reader["BeforeThinCount"].ToString()), Convert.ToInt32(reader["AfterThinCount"].ToString()), Convert.ToDateTime(reader["ThinDate"].ToString()), Convert.ToDateTime(reader["HarvestDate"].ToString()), Convert.ToInt32(reader["HarvestCount"].ToString()));
+                    {
+                        if (reader.HasRows == true)
+                        {
+                            int HarvestCount = 1;
+
+                            while (reader.Read())
+                            {
+                              
+
+
+
+
+                                if (reader["HarvestDate"].ToString() == "")
+                                {
+                                    
+                                    trees[treeindex].AddHarvest(Convert.ToInt32(reader["BeforeThinCount"].ToString()), Convert.ToInt32(reader["AfterThinCount"].ToString()), Convert.ToDateTime(reader["ThinDate"].ToString()));
+                                }
+                                else if (reader["ThinDate"].ToString() == "")
+                                {
+                                    trees[treeindex].AddHarvest(Convert.ToDateTime(reader["HarvestDate"].ToString()), Convert.ToInt32(reader["HarvestCount"].ToString()));
+                                }
+                                else
+                                {
+                                   
+
+                                    trees[treeindex].AddHarvest(Convert.ToInt32(reader["BeforeThinCount"].ToString()), Convert.ToInt32(reader["AfterThinCount"].ToString()), Convert.ToDateTime(reader["ThinDate"].ToString()), Convert.ToDateTime(reader["HarvestDate"].ToString()), Convert.ToInt32(reader["HarvestCount"].ToString()));
+
+                                }
+                                HarvestCount++;
+                            }
+                       
 
                         }
 
                         myConnection.Close();
                     }
                 }
-
+                //MessageBox.Show($"Number of Harvests{trees[treeindex].GetHarvests().Count}");
                 treeindex++;
             }
 
 
+        }
+
+        public void ClearData()
+        {
+            trees.Clear();
+           
         }
 
         public void SetTrees(List<Tree> trees)
@@ -95,14 +127,17 @@ namespace Orchard_CSD_Lvl_3
 
         public Tree GetTree(int treeId)
         {
-
+            //MessageBox.Show($"Search Tree Id {treeId}");
             Tree tree = new Tree(-1, -1, -1, '6', new DateTime());
 
             foreach (Tree foundtree in trees)
             {
-                if (treeId == tree.GetTreeID())
+                //MessageBox.Show($"{treeId} : {foundtree.GetTreeID()}");
+                if (treeId == foundtree.GetTreeID())
                 {
+                    //MessageBox.Show("tree found");
                     tree = foundtree;
+                    return tree;
                 }
             }
 

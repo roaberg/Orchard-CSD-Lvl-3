@@ -33,6 +33,20 @@ namespace Orchard_CSD_Lvl_3
             //MessageBox.Show($"{treeID} {treeNo} {treeRow} {treeBlock} {datePlanted.ToString()}");
         }
 
+        public Harvest(DateTime harvestDate, int harvestCount)
+        {
+            this.harvestDate = harvestDate;
+            this.harvestCount = harvestCount;
+            
+            //MessageBox.Show($"{treeID} {treeNo} {treeRow} {treeBlock} {datePlanted.ToString()}");
+        }
+
+        public Harvest(int tCountBefore, int tCountAfter, DateTime thinningdate)
+        {
+            thinningCountBefore = tCountBefore;
+            thinningCountAfter = tCountAfter;
+            this.thinningDate = thinningdate;
+        }
 
         public int CountDifference()
         {

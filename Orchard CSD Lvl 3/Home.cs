@@ -64,7 +64,7 @@ namespace Orchard_CSD_Lvl_3
         {
             
             this.Hide();
-            Help newform = new Help();
+            Help newform = new Help(om);
             newform.ShowDialog();
             
         }
@@ -87,21 +87,21 @@ namespace Orchard_CSD_Lvl_3
         private void btnSearch_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SearchTree newform = new SearchTree();
+            SearchTree newform = new SearchTree(om);
             newform.ShowDialog();
         }
 
         private void btnAddTree_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddApple newform = new AddApple();
+            AddApple newform = new AddApple(om);
             newform.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddApple newform = new AddApple();
+            AddApple newform = new AddApple(om);
             newform.ShowDialog();
         }
 
@@ -115,7 +115,7 @@ namespace Orchard_CSD_Lvl_3
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Help newform = new Help();
+            Help newform = new Help(om);
             newform.ShowDialog();
         }
 

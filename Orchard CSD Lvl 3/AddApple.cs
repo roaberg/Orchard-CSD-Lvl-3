@@ -28,8 +28,9 @@ namespace Orchard_CSD_Lvl_3
         SqlConnection connection;
         string connectionString;
 
-        public AddApple()
+        public AddApple(OrchardManager om)
         {
+            this.om = om;
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["Orchard_CSD_Lvl_3.Properties.Settings.MrAppleConnectionString"].ConnectionString;
         
@@ -51,7 +52,7 @@ namespace Orchard_CSD_Lvl_3
             {
                 MessageBox.Show("only use one alphabetical character");
 
-                txbTreeBlock.BackColor = Color.Red;
+                txbTreeBlock.BackColor = Color.Firebrick;
 
 
                
@@ -70,13 +71,55 @@ namespace Orchard_CSD_Lvl_3
             con = new SqlConnection(connectionString);
             con.Open();
 
-            cmd = new SqlCommand("INSERT INTO TblTree (TreeNum, TreeRow, TreeBlock, DatePlanted) VALUES (@TreeNum, @TreeRow, @TreeBlock, @DatePlanted)", con);
-            cmd.Parameters.AddWithValue("@TreeNum", nudNumber.Value);
-            cmd.Parameters.AddWithValue("@TreeRow", nudRow.Value);
-            cmd.Parameters.AddWithValue("@TreeBlock", txbTreeBlock.Text);
-            cmd.Parameters.AddWithValue("@DatePlanted", dtpDatePlanted.Text);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Tree successfully added");
+
+
+
+            SqlCommand cmd1 = new SqlCommand("Select TreeNum from TblTree where TreeNum =@parm1 and TreeRow =@parm2 and TreeBlock =@parm3", con);
+            //SqlCommand cmd2 = new SqlCommand("Select TreeRow from TblTree where TreeRow =@parm2", con);
+            //SqlCommand cmd3 = new SqlCommand("Select TreeBlock from TblTree where TreeBlock =@parm3", con);
+            cmd1.Parameters.AddWithValue("parm1", nudNumber.Value);
+            cmd1.Parameters.AddWithValue("parm2", nudRow.Value);
+            cmd1.Parameters.AddWithValue("parm3", txbTreeBlock.Text);
+            
+            SqlDataReader reader1;
+            reader1 = cmd1.ExecuteReader();
+            if (reader1.Read())
+            {
+                MessageBox.Show("That Tree already exists");
+                con.Close();
+                nudNumber.Value = 0;
+                nudRow.Value = 0;
+                txbTreeBlock.Text = "";
+
+            }
+            else
+            {
+                con.Close();  
+
+                 SqlCommand cmd = new SqlCommand("INSERT INTO TblTree (TreeNum, TreeRow, TreeBlock, DatePlanted) VALUES (@TreeNum, @TreeRow, @TreeBlock, @DatePlanted)", con);
+
+                con.Open();
+
+
+                cmd.Parameters.AddWithValue("@TreeNum", nudNumber.Value);
+                cmd.Parameters.AddWithValue("@TreeRow", nudRow.Value);
+                cmd.Parameters.AddWithValue("@TreeBlock", txbTreeBlock.Text);
+                cmd.Parameters.AddWithValue("@DatePlanted", dtpDatePlanted.Text);
+            
+            
+            
+            
+            
+            
+                cmd.ExecuteNonQuery();
+               
+                    MessageBox.Show("Tree successfully added");
+
+            }
+
+
+
+           
 
             
 
@@ -118,7 +161,7 @@ namespace Orchard_CSD_Lvl_3
             }
             else
             {
-                nudNumber.BackColor = Color.Red;
+                nudNumber.BackColor = Color.Firebrick;
             } 
 
         }
@@ -149,7 +192,7 @@ namespace Orchard_CSD_Lvl_3
             }
             else
             {
-                nudRow.BackColor = Color.Red;
+                nudRow.BackColor = Color.Firebrick;
             }
 
         }
@@ -175,6 +218,11 @@ namespace Orchard_CSD_Lvl_3
             {
                 btnAppleEnter.Enabled = false;
             }
+        }
+
+        private void dtpDatePlanted_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

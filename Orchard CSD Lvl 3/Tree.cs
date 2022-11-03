@@ -54,12 +54,24 @@ namespace Orchard_CSD_Lvl_3
 
         public List<Harvest> GetHarvests()
         {
+            //MessageBox.Show($"Tree id {treeID}\nHarvestCount {harvests.Count}");
             return harvests;
         }
         public void AddHarvest(int beforethinning, int afterthinning, DateTime thinningdate, DateTime harvestDate, int harvestCount)
         
         {
             harvests.Add(new Harvest(beforethinning, afterthinning, thinningdate, harvestDate, harvestCount));
+        }
+
+        public void AddHarvest(DateTime harvestDate, int harvestCount)
+
+        {
+            harvests.Add(new Harvest(harvestDate, harvestCount));
+        }
+
+        public void AddHarvest(int beforethinning, int afterthinning, DateTime thinningdate)
+        {
+            harvests.Add(new Harvest(beforethinning, afterthinning, thinningdate));
         }
 
 

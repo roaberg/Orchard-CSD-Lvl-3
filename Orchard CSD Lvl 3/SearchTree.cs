@@ -13,8 +13,9 @@ namespace Orchard_CSD_Lvl_3
     public partial class SearchTree : Form
     {
         private OrchardManager om;
-        public SearchTree()
+        public SearchTree(OrchardManager om)
         {
+            this.om = om;
             InitializeComponent();
         }
 

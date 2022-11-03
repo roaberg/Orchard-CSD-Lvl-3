@@ -51,7 +51,7 @@ namespace Orchard_CSD_Lvl_3
             this.dtpThinningDate = new System.Windows.Forms.DateTimePicker();
             this.nudAfterThinning = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnAppleEnter = new System.Windows.Forms.Button();
+            this.btnUpdateApple = new System.Windows.Forms.Button();
             this.lblAfterThinning = new System.Windows.Forms.Label();
             this.lblBeforeThinning = new System.Windows.Forms.Label();
             this.lblThinningDate = new System.Windows.Forms.Label();
@@ -100,7 +100,7 @@ namespace Orchard_CSD_Lvl_3
             this.panel3.Controls.Add(this.dtpThinningDate);
             this.panel3.Controls.Add(this.nudAfterThinning);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.btnAppleEnter);
+            this.panel3.Controls.Add(this.btnUpdateApple);
             this.panel3.Controls.Add(this.lblAfterThinning);
             this.panel3.Controls.Add(this.lblBeforeThinning);
             this.panel3.Controls.Add(this.lblThinningDate);
@@ -145,16 +145,22 @@ namespace Orchard_CSD_Lvl_3
             // nudApplesCount
             // 
             this.nudApplesCount.Location = new System.Drawing.Point(136, 249);
+            this.nudApplesCount.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             this.nudApplesCount.Name = "nudApplesCount";
             this.nudApplesCount.Size = new System.Drawing.Size(135, 20);
             this.nudApplesCount.TabIndex = 28;
             this.nudApplesCount.Visible = false;
+            this.nudApplesCount.ValueChanged += new System.EventHandler(this.nudApplesCount_ValueChanged);
             // 
             // lblAppleCount
             // 
             this.lblAppleCount.AutoSize = true;
             this.lblAppleCount.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppleCount.Location = new System.Drawing.Point(3, 247);
+            this.lblAppleCount.Location = new System.Drawing.Point(3, 250);
             this.lblAppleCount.Name = "lblAppleCount";
             this.lblAppleCount.Size = new System.Drawing.Size(132, 19);
             this.lblAppleCount.TabIndex = 27;
@@ -198,7 +204,7 @@ namespace Orchard_CSD_Lvl_3
             // dtpHarvestDate
             // 
             this.dtpHarvestDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHarvestDate.Location = new System.Drawing.Point(136, 179);
+            this.dtpHarvestDate.Location = new System.Drawing.Point(136, 181);
             this.dtpHarvestDate.Name = "dtpHarvestDate";
             this.dtpHarvestDate.Size = new System.Drawing.Size(135, 20);
             this.dtpHarvestDate.TabIndex = 23;
@@ -267,6 +273,7 @@ namespace Orchard_CSD_Lvl_3
             this.lvwTrees.Size = new System.Drawing.Size(368, 95);
             this.lvwTrees.TabIndex = 16;
             this.lvwTrees.UseCompatibleStateImageBehavior = false;
+            this.lvwTrees.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvwTrees_ItemSelectionChanged);
             this.lvwTrees.SelectedIndexChanged += new System.EventHandler(this.lvwTrees_SelectedIndexChanged);
             // 
             // dtpThinningDate
@@ -281,10 +288,16 @@ namespace Orchard_CSD_Lvl_3
             // nudAfterThinning
             // 
             this.nudAfterThinning.Location = new System.Drawing.Point(136, 312);
+            this.nudAfterThinning.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             this.nudAfterThinning.Name = "nudAfterThinning";
             this.nudAfterThinning.Size = new System.Drawing.Size(135, 20);
             this.nudAfterThinning.TabIndex = 14;
             this.nudAfterThinning.Visible = false;
+            this.nudAfterThinning.ValueChanged += new System.EventHandler(this.nudAfterThinning_ValueChanged);
             // 
             // button1
             // 
@@ -300,18 +313,18 @@ namespace Orchard_CSD_Lvl_3
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnAppleEnter
+            // btnUpdateApple
             // 
-            this.btnAppleEnter.Enabled = false;
-            this.btnAppleEnter.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppleEnter.ForeColor = System.Drawing.Color.Black;
-            this.btnAppleEnter.Location = new System.Drawing.Point(303, 299);
-            this.btnAppleEnter.Name = "btnAppleEnter";
-            this.btnAppleEnter.Size = new System.Drawing.Size(124, 33);
-            this.btnAppleEnter.TabIndex = 12;
-            this.btnAppleEnter.Text = "Update";
-            this.btnAppleEnter.UseVisualStyleBackColor = true;
-            this.btnAppleEnter.Click += new System.EventHandler(this.btnAppleEnter_Click);
+            this.btnUpdateApple.Enabled = false;
+            this.btnUpdateApple.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateApple.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateApple.Location = new System.Drawing.Point(303, 299);
+            this.btnUpdateApple.Name = "btnUpdateApple";
+            this.btnUpdateApple.Size = new System.Drawing.Size(124, 33);
+            this.btnUpdateApple.TabIndex = 12;
+            this.btnUpdateApple.Text = "Update";
+            this.btnUpdateApple.UseVisualStyleBackColor = true;
+            this.btnUpdateApple.Click += new System.EventHandler(this.btnAppleEnter_Click);
             // 
             // lblAfterThinning
             // 
@@ -351,10 +364,16 @@ namespace Orchard_CSD_Lvl_3
             // nudBeforeThinning
             // 
             this.nudBeforeThinning.Location = new System.Drawing.Point(136, 249);
+            this.nudBeforeThinning.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             this.nudBeforeThinning.Name = "nudBeforeThinning";
             this.nudBeforeThinning.Size = new System.Drawing.Size(135, 20);
             this.nudBeforeThinning.TabIndex = 6;
             this.nudBeforeThinning.Visible = false;
+            this.nudBeforeThinning.ValueChanged += new System.EventHandler(this.nudBeforeThinning_ValueChanged);
             // 
             // panel2
             // 
@@ -407,7 +426,7 @@ namespace Orchard_CSD_Lvl_3
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnAppleEnter;
+        private System.Windows.Forms.Button btnUpdateApple;
         private System.Windows.Forms.Label lblAfterThinning;
         private System.Windows.Forms.Label lblBeforeThinning;
         private System.Windows.Forms.NumericUpDown nudBeforeThinning;

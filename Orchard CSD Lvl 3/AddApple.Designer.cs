@@ -187,6 +187,7 @@ namespace Orchard_CSD_Lvl_3
             this.dtpDatePlanted.Name = "dtpDatePlanted";
             this.dtpDatePlanted.Size = new System.Drawing.Size(316, 20);
             this.dtpDatePlanted.TabIndex = 11;
+            this.dtpDatePlanted.ValueChanged += new System.EventHandler(this.dtpDatePlanted_ValueChanged);
             // 
             // label6
             // 
